@@ -15,13 +15,13 @@ const Home = () => {
         <div className="m-8 sm:12">
           <Link
             to="/flexpage"
-            className="home-link block sm:inline-block text-xl font-semibold hover:shadow-2xl duration-300"
+            className="home-link block sm:inline-block text-xl font-semibold hover:shadow-2xl duration-500"
           >
             Flex Page
           </Link>
           <Link
             to="/gridpage"
-            className="home-link block  sm:inline-block text-xl font-semibold  hover:shadow-2xl duration-300"
+            className="home-link block  sm:inline-block text-xl font-semibold  hover:shadow-2xl duration-500"
           >
             Grid Page
           </Link>
