@@ -11,6 +11,9 @@
 - There are two pages with the same design. One is using display grid, the other is using flex feature. It is possible to switch to these pages from the home page.
 
 <br/>
+
+[Click to View Website](https://alphasteallarassessment.netlify.app/)
+
 <br/>
 <img src="./public/images/project_image_1.png" alt="project image 1" width="100%">
 <br/>
