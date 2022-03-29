@@ -3,6 +3,15 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
+        welcome: {
+          "0%": {
+            transform: "scale(0)",
+          },
+
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
         wiggle: {
           "0%": {
             opacity: 0,
@@ -13,8 +22,53 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+        comeFromTop: {
+          "0%": {
+            opacity: 0,
+            transform: "translateY(-100px)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+        },
+        comeFromLeft: {
+          "0%": {
+            opacity: 0,
+            transform: "translateX(-20%)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateX(0)",
+          },
+        },
+        comeFromRight: {
+          "0%": {
+            opacity: 0,
+            transform: "translateX(20%)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateX(0)",
+          },
+        },
+        rotate: {
+          "0%": {
+            opacity: 0,
+            transform: "rotate(45deg)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "rotate(0)",
+          },
+        },
       },
       animation: {
+        welcome: "welcome 1.5s ease-out",
+        comeFromTop: "comeFromTop 0.7s ease-out",
+        comeFromLeft: "comeFromLeft 1s ease-in-out ",
+        comeFromRight: "comeFromRight 1s ease-in-out ",
+        rotate: "rotate 1s ease-in-out ",
         wiggle: "wiggle 0.7s ease-out",
       },
       fontFamily: {

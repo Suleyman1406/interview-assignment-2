@@ -31,7 +31,7 @@ const Body = ({ colorState, errorState }) => {
             <div
               key={i}
               className={
-                "w-[60%] py-3 my-2 shadow-md hover:shadow-xl cursor-pointer italic hover:translate-x-3 tracking-wide text-black/50 transition duration-300   mx-auto  " +
+                "w-[60%] py-3 my-2 shadow-md hover:shadow-xl cursor-pointer italic hover:translate-x-3 tracking-wide text-black/50 transition duration-300   mx-auto  animate-rotate " +
                 (colorState.color === item
                   ? "translate-x-7 hover:translate-x-7"
                   : "") +

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="w-full h-full flex flex-col justify-center text-center bg-home-back bg-cover text-black">
-      <div className="max-w-full w-fit mx-auto pb:16 sm:pb-36">
+      <div className="max-w-full w-fit mx-auto pb:16 sm:pb-36 animate-welcome">
         <h1 className="text-2xl sm:text-4xl py-4">
           Hello, Welcome to <span className="text-tertiary">Alphastellar</span>{" "}
           Home Assessment

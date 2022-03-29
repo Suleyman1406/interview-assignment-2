@@ -74,35 +74,35 @@ const Form = ({ colorState, errorState }) => {
         type="text"
         value={user.name}
         onChange={(e) => setUser({ ...user, name: e.target.value })}
-        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
+        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl animate-comeFromLeft`}
         placeholder="Your name..."
       />
       <input
         type="text"
         value={user.surname}
         onChange={(e) => setUser({ ...user, surname: e.target.value })}
-        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
+        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl animate-comeFromRight`}
         placeholder="Your surname..."
       />
       <input
         type="text"
         value={user.email}
         onChange={(e) => setUser({ ...user, email: e.target.value })}
-        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
+        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl animate-comeFromLeft`}
         placeholder="Your email..."
       />
       <input
         type="password"
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
-        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
+        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl animate-comeFromRight`}
         placeholder="Your password..."
       />
       <input
         type="password"
         value={user.confirmPassword}
         onChange={(e) => setUser({ ...user, confirmPassword: e.target.value })}
-        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
+        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl animate-comeFromLeft`}
         placeholder="Your password again..."
       />
 
