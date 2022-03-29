@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { userSchema, requireSchema } from "../../../Validations/FormValidation";
-const Form = ({ colorState }) => {
+const Form = ({ colorState, errorState }) => {
   const [user, setUser] = useState({
     name: "",
     surname: "",
@@ -11,20 +11,25 @@ const Form = ({ colorState }) => {
     confirmPassword: "",
   });
   const [isDisable, setDisable] = useState(true);
+
   const resetColor = () => {
     colorState.setColor("bg-[#cbd5e1]");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let formData = {
-      name: e.target[0].value,
-      surname: e.target[1].value,
-      email: e.target[2].value,
-      password: e.target[3].value,
-      confirmPassword: e.target[4].value,
+    console.log(user.email);
+    let a = async () => {
+      await userSchema
+        .validate(user)
+        .catch((err) => {
+          errorState.setError(err.message);
+        })
+        .then(() => {
+          console.log("yes");
+        });
     };
-    console.log(formData);
+    a();
   };
 
   useEffect(() => {

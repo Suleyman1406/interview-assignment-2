@@ -1,9 +1,8 @@
 import React from "react";
 import Form from "./Form";
 
-const Body = ({ colorState }) => {
+const Body = ({ colorState, errorState }) => {
   const changeColor = (color) => {
-    console.log(colorState);
     colorState.setColor(color);
   };
 
@@ -41,7 +40,7 @@ const Body = ({ colorState }) => {
             </div>
           ))}
         </div>
-        <Form colorState={colorState} />
+        <Form colorState={colorState} errorState={errorState} />
       </div>
     </div>
   );

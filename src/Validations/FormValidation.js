@@ -1,13 +1,12 @@
 import * as yup from "yup";
 
 export const userSchema = yup.object().shape({
-  name: yup.string().required("Name is required"),
-  emaail: yup.string().email().required("Email is required"),
-  password: yup.string().min(4).max(10).required("Password is required"),
+  name: yup.string(),
+  email: yup.string().email(),
+  password: yup.string().min(4).max(10),
   confirmPassword: yup
     .string()
-    .oneOf([yup.ref("password"), null], "Passwords must match")
-    .required("Confirm password is required"),
+    .oneOf([yup.ref("password"), null], "Passwords must match"),
 });
 
 export const requireSchema = yup.object().shape({

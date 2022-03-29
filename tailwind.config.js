@@ -2,6 +2,21 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      keyframes: {
+        wiggle: {
+          "0%": {
+            opacity: 0,
+            transform: "translateY(-200%)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 0.7s ease-out",
+      },
       fontFamily: {
         sans: ["Open Sans", "sans-serif"],
       },
