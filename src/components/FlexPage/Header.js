@@ -6,7 +6,7 @@ const Header = ({ colorState }) => {
   return (
     <div
       className={
-        "w-full  h-12 text-black flex px-10  items-center italic font-semibold text-2xl " +
+        "w-full  h-12 text-black flex px-10  items-center italic font-semibold text-xl sm:text-2xl " +
         colorState.color
       }
     >

@@ -11,7 +11,7 @@ const Content = ({ colorState }) => {
     setError,
   };
   return (
-    <div className="h-[calc(100%-112px)] transition-all flex text-center text-black bg-body-back bg-cover px-5 py-7">
+    <div className="h-[calc(100%-112px)] transition-all flex text-center text-black bg-body-back bg-cover px-3 sm:px-5 py-4 sm:py-7">
       <Error errorState={errorState} />
       <Body colorState={colorState} errorState={errorState} />
       <Sidebar />

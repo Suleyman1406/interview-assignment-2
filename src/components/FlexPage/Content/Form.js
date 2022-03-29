@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { userSchema, requireSchema } from "../../../Validations/FormValidation";
 const Form = ({ colorState, errorState }) => {
   const [user, setUser] = useState({
@@ -11,8 +12,26 @@ const Form = ({ colorState, errorState }) => {
     confirmPassword: "",
   });
   const [isDisable, setDisable] = useState(true);
+  const [isEmpty, setEmpty] = useState(true);
+  const navigate = useNavigate();
 
-  const resetColor = () => {
+  useEffect(() => {
+    let a = async () => {
+      let isValid = await requireSchema.isValid(user);
+      setDisable(!isValid);
+    };
+    a();
+    setEmpty(checkEmpty);
+  }, [user]);
+
+  const reset = () => {
+    setUser({
+      name: "",
+      surname: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
     colorState.setColor("bg-[#cbd5e1]");
   };
 
@@ -24,80 +43,81 @@ const Form = ({ colorState, errorState }) => {
         .validate(user)
         .catch((err) => {
           errorState.setError(err.message);
+          return "error";
         })
-        .then(() => {
-          console.log("yes");
+        .then((e) => {
+          if (e !== "error") {
+            navigate("/");
+          }
         });
     };
     a();
   };
 
-  useEffect(() => {
-    let a = async () => {
-      let isValid = await requireSchema.isValid(user);
-      setDisable(!isValid);
-    };
-    a();
-  }, [user]);
-
+  const checkEmpty = () => {
+    if (
+      user.name ||
+      user.surname ||
+      user.password ||
+      user.email ||
+      user.confirmPassword
+    )
+      return false;
+    return true;
+  };
   return (
-    <form id="form" className="w-3/4 h-full " onSubmit={handleSubmit}>
-      <h2 className={"m-4 text-3xl uppercase font-semibold "}>
+    <form id="form" className="w-full sm:w-3/4 h-full " onSubmit={handleSubmit}>
+      <h2 className={"m-4 text-xl sm:text-3xl uppercase font-semibold "}>
         Please fill in this form
       </h2>
       <input
         type="text"
         value={user.name}
         onChange={(e) => setUser({ ...user, name: e.target.value })}
-        className={`w-[70%] mx-auto my-3 py-3 px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
+        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
         placeholder="Your name..."
       />
       <input
         type="text"
         value={user.surname}
         onChange={(e) => setUser({ ...user, surname: e.target.value })}
-        className={`w-[70%] mx-auto my-3 py-3 px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
+        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
         placeholder="Your surname..."
       />
       <input
         type="text"
         value={user.email}
         onChange={(e) => setUser({ ...user, email: e.target.value })}
-        className={`w-[70%] mx-auto my-3 py-3 px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
+        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
         placeholder="Your email..."
       />
       <input
         type="password"
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
-        className={`w-[70%] mx-auto my-3 py-3 px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
+        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
         placeholder="Your password..."
       />
       <input
         type="password"
         value={user.confirmPassword}
         onChange={(e) => setUser({ ...user, confirmPassword: e.target.value })}
-        className={`w-[70%] mx-auto my-3 py-3 px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
+        className={`w-[85%] sm:w-[70%] mx-auto my-2 sm:my-3 py-2 px-3 sm:py-3 sm:px-5 outline-none shadow-md hover:shadow-lg transition duration-300 focus:shadow-xl`}
         placeholder="Your password again..."
       />
 
       <div className=" flex-row flex-wrap m-auto space-x-4  sm:space-x-10 lg:space-x-24 my-8">
         <button
-          className={
-            "w-[30%] p-4 font-bold uppercase mx-auto duration-300 hover:shadow-2xl hover:-translate-y-2  " +
-            colorState.color
-          }
+          disabled={isEmpty}
+          className={"form-btn " + colorState.color}
           type="button"
-          onClick={resetColor}
+          onClick={reset}
         >
           Reset Button
         </button>
         <button
           disabled={isDisable}
-          className={
-            "w-[30%] p-4 font-bold uppercase mx-auto duration-300 hover:shadow-2xl disabled:translate-y-0 disabled:shadow-none disabled:cursor-not-allowed disabled:opacity-20 hover:-translate-y-2 " +
-            colorState.color
-          }
+          className={"form-btn " + colorState.color}
           type="submit"
         >
           Submit Button

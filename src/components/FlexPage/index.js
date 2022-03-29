@@ -4,7 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { useState } from "react";
 const FlexPage = () => {
-  const [selectedColor, setSelectedColor] = useState("bg-slate-300");
+  const [selectedColor, setSelectedColor] = useState("bg-[#cbd5e1]");
   var colorState = {
     color: selectedColor,
     setColor: setSelectedColor,

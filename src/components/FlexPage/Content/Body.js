@@ -9,20 +9,24 @@ const Body = ({ colorState, errorState }) => {
   return (
     <div
       id="body"
-      className=" w-[78%] h-full  overflow-auto bg-white/50 px-2 py-4"
+      className="w-[100%]  lg:w-[78%] h-full  overflow-auto  bg-white/50 px-2 py-3 sm:py-4"
     >
-      <div id="container h-full" className="flex ju">
-        <div id="menuItems" className="w-1/4 h-full  flex flex-col ">
+      <div id="container" className="flex ">
+        <div
+          id="menuItems"
+          className="hidden sm:flex sm:w-1/4 h-full   flex-col "
+        >
           {[
+            "bg-[#cbd5e1]",
             "bg-[#d6d3d1]",
             "bg-[#fde047]",
-            "bg-[#22d3ee]",
             "bg-[#bef264]",
+            "bg-[#22d3ee]",
             "bg-[#e0f2fe]",
-            "bg-[#a78bfa]",
             "bg-[#e9d5ff]",
             "bg-[#f0abfc]",
             "bg-[#fecdd3]",
+            "bg-[#a78bfa]",
           ].map((item, i) => (
             <div
               key={i}
