@@ -5,6 +5,6 @@
 
 @layer components {
   .home-link {
-    @apply px-12 py-6 m-10 relative before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:transition-all before:duration-500 before:border-t-4 before:border-l-4 before:border-solid before:border-tertiary after:content-[""] after:absolute after:bottom-0 after:right-0 after:w-full after:h-full  after:transition-all after:duration-500 after:border-b-4 after:border-r-4 after:border-solid after:border-tertiary after:-translate-x-1 after:-translate-y-1 before:translate-x-1 before:translate-y-1 hover:before:w-4 hover:before:h-4 hover:after:w-4 hover:after:h-4 hover:after:rotate-[360deg] hover:before:rotate-[360deg];
+    @apply px-12 py-6 m-10 relative hover:-skew-x-12 before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:transition-all before:duration-500 before:border-t-4 before:border-l-4 before:border-solid before:border-tertiary after:content-[""] after:absolute after:bottom-0 after:right-0 after:w-full after:h-full  after:transition-all after:duration-500 after:border-b-4 after:border-r-4 after:border-solid after:border-tertiary after:-translate-x-1 after:-translate-y-1 before:translate-x-1 before:translate-y-1 hover:before:w-4 hover:before:h-4 hover:after:w-4 hover:after:h-4 hover:after:rotate-[360deg] hover:before:rotate-[360deg];
   }
 }

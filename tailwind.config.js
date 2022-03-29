@@ -12,6 +12,7 @@ module.exports = {
       },
       backgroundImage: {
         "home-back": "url('/public/images/bg_home.jpg')",
+        "body-back": "url('/public/images/bg_body.jpg')",
       },
     },
   },

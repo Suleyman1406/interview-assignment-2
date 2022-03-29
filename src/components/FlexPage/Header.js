@@ -1,7 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Header = () => {
-  return <div className="w-full  h-[11%] sm:h-[8%] bg-secondary">Header</div>;
+const Header = ({ colorState }) => {
+  console.log(colorState.color);
+  return (
+    <div
+      className={
+        "w-full  h-12 text-black flex px-10  items-center italic font-semibold text-2xl " +
+        colorState.color
+      }
+    >
+      <Link to="/">Alphastellar Assessment</Link>
+    </div>
+  );
 };
 
 export default Header;

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
-import FlexPage from "./components/FlexPage/FlexPage";
+import FlexPage from "./components/FlexPage";
 import GridPage from "./components/GridPage/GridPage";
 import Home from "./components/Home";
 
